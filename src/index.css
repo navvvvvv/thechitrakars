@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Elegant photography theme - warm, sophisticated palette */
+    --background: 40 20% 97%;
+    --foreground: 25 15% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 25 15% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 25 15% 20%;
+
+    --primary: 25 15% 20%;
+    --primary-foreground: 40 20% 97%;
+
+    --secondary: 340 50% 65%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 40 15% 90%;
+    --muted-foreground: 25 10% 45%;
+
+    --accent: 340 50% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 40 15% 85%;
+    --input: 40 15% 85%;
+    --ring: 340 50% 65%;
+
+    --radius: 0.5rem;
+
+    /* Custom design tokens */
+    --gold-accent: 45 80% 65%;
+    --rose-gold: 340 50% 65%;
+    --cream: 40 20% 97%;
+    --charcoal: 25 15% 20%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(40 20% 97%) 0%, hsl(40 15% 92%) 100%);
+    --gradient-overlay: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 100%);
+    
+    /* Shadows */
+    --shadow-elegant: 0 10px 40px -10px hsl(25 15% 20% / 0.15);
+    --shadow-soft: 0 4px 20px -2px hsl(25 15% 20% / 0.08);
+    
+    /* Transitions */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 25 15% 12%;
+    --foreground: 40 20% 95%;
+
+    --card: 25 15% 15%;
+    --card-foreground: 40 20% 95%;
+
+    --popover: 25 15% 15%;
+    --popover-foreground: 40 20% 95%;
+
+    --primary: 40 20% 95%;
+    --primary-foreground: 25 15% 12%;
+
+    --secondary: 340 50% 55%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 25 10% 25%;
+    --muted-foreground: 40 10% 60%;
+
+    --accent: 340 50% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 25 10% 25%;
+    --input: 25 10% 25%;
+    --ring: 340 50% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+}
+
+@layer utilities {
+  .image-hover {
+    @apply transition-transform duration-700 ease-out hover:scale-110;
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+  
+  .fade-in-up {
+    animation: fadeInUp 1s ease-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
